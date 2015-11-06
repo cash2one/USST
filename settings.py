@@ -1,41 +1,107 @@
+# -*- coding: utf-8 -*-
 #
-# Copyright (c) 2015
+# Copyright (c) 2015 lao605
 # Licensed under The MIT License (MIT)
 # http://opensource.org/licenses/MIT
 #
 
-DOUYU = {
-    "hostname": "http://www.douyu.com",
-    "modules": {
-        "heartstone": {
-            "subdir": "/directory/game/How",
-            "subscription": [
+# If new platform is coming, add following setting to USST
+# "platform": {
+#         "hostname": "http://www.douyu.com",  # hostname of the platform
+#         "strategy": CustomizedStrategy,  # your customized scrapping strategy
+#         "games": {
+#             # name of the game to be used in the url
+#             "heartstone": {
+#                 "subdir": "/directory/game/How",
+#                 "subscription": {
+#                     # The key is English nickname to be used in the url
+#                     "qiuri": "/qiuri",
+#                 },
+#             },
+#             "warcraft": {
+#                 "subdir": "/directory/game/WOW",
+#                 "subscription": {
+#                     "swifty": "/swifty",
+#                 },
+#             },
+#         },
+#     },
 
-            ]
-        },
-        "warcraft": {
-            "subdir": "/directory/game/WOW",
-            "subscription": [
+from strategies import *
 
-            ],
+
+USST = {
+    "douyu": {
+        "hostname": "http://www.douyu.com",
+        "strategy": DouyuStrategy,
+        "games": {
+            "heartstone": {
+                "subdir": "/directory/game/How",
+                "subscription": {
+                    # The key is English nickname to be use in the url
+                    "qiuri": "/qiuri",
+                },
+            },
+            "warcraft": {
+                "subdir": "/directory/game/WOW",
+                "subscription": {
+
+                },
+            },
         },
     },
-}
+    "panda": {
+        "hostname": "http://www.panda.tv",
+        "strategy": PandaStrategy,
+        "games": {
+            "heartstone": {
+                "subdir": "/cate/hearthstone",
+                "subscription": {
 
-PANDA = {
-    "hostname": "http://www.panda.tv",
-    "modules": {
-        "heartstone": {
-            "subdir": "/cate/hearthstone",
-            "subscription": [
+                },
+            },
+            "lol": {
+                "subdir": "/cate/lol",
+                "subscription": {
 
-            ]
+                },
+            },
         },
-        "lol": {
-            "subdir": "/cate/lol",
-            "subscription": [
+    },
+    "zhanqi": {
+        "hostname": "http://www.zhanqi.tv",
+        "strategy": ZhanqiStrategy,
+        "games": {
+            "heartstone": {
+                "subdir": "/games/how",
+                "subscription": {
 
-            ],
+                },
+            },
+            "warcraft": {
+                "subdir": "/games/wow",
+                "subscription": {
+
+                },
+            },
+        },
+    },
+    "longzhu": {
+        "hostname": "http://longzhu.com",
+        "strategy": LongzhuStrategy,
+        "games": {
+            "beauty": {
+                "subdir": "/channels/belle",
+                "subscription": {
+
+                },
+            },
+            "cf": {
+                "subdir": "/channels/cf",
+                "subscription": {
+
+                },
+            },
         },
     },
 }
