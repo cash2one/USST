@@ -4,23 +4,38 @@
 # http://opensource.org/licenses/MIT
 #
 
-douyu_url = "http://www.douyu.com/directory/game/How"
-panda_url = ""
-zhanqi_url = ""
-longzhu_url = ""
+DOUYU = {
+    "hostname": "http://www.douyu.com",
+    "modules": {
+        "heartstone": {
+            "subdir": "/directory/game/How",
+            "subscription": [
 
-douyu_streamers = [
+            ]
+        },
+        "warcraft": {
+            "subdir": "/directory/game/WOW",
+            "subscription": [
 
-]
+            ],
+        },
+    },
+}
 
-panda_streamers = [
+PANDA = {
+    "hostname": "http://www.panda.tv",
+    "modules": {
+        "heartstone": {
+            "subdir": "/cate/hearthstone",
+            "subscription": [
 
-]
+            ]
+        },
+        "lol": {
+            "subdir": "/cate/lol",
+            "subscription": [
 
-zhanqi_streamers = [
-
-]
-
-longzhu_streamers = [
-
-]
+            ],
+        },
+    },
+}
