@@ -9,13 +9,19 @@ from tornado.web import RequestHandler
 from helpers import (check_game,
                      check_platform,
                      check_streamer)
+import json
+
+# temporary
+from settings import USST
 
 
 class StreamerHandler(RequestHandler):
     def __init__(self, application, request, **kwargs):
-        pass
+        super(StreamerHandler, self).__init__(application, request, **kwargs)
 
-    def get(self, platform, game, streamer):
+    async def get(self, platform, game, streamer):
+        self.write("StreamerHandler %s, %s, %s"%(platform, game, streamer))
+        self.finish()
         # TODO: This fetches information of a streamer of a games of a platform.
         '''
         1. Check streamer
@@ -26,7 +32,9 @@ class GameHandler(StreamerHandler):
     def __init__(self, application, request, **kwargs):
         super(GameHandler, self).__init__(application, request, **kwargs)
 
-    def get(self, platform, game):
+    async def get(self, platform, game):
+        self.write("GameHandler %s, %s"%(platform, game))
+        self.finish()
         # TODO: This fetches all information of all streamer of a games of a platform.
         '''
         1. Check game
@@ -38,11 +46,49 @@ class PlatformHandler(GameHandler):
     def __init__(self, application, request, **kwargs):
         super(PlatformHandler, self).__init__(application, request, **kwargs)
 
-    def get(self, platform):
+    async def get(self, platform):
         # TODO: This fetches all information of all streamers of all games of a platform.
         '''
         1. Check platform
-        2. Call GameHandlers.
+        2. Call GameHandlers
         '''
-        pass
+        check_platform(platform)
+        response = await platform_call(platform)
+        self.write(json.dumps(response))
+        self.finish()
 
+
+async def streamer_call(platform, game, streamer):
+    # strategy is platform agnostic.
+    strategy = USST[platform]["strategy"]
+    streamer_url = USST[platform]["games"][game]["subscription"][streamer]
+    game_url = USST[platform]["hostname"] + USST[platform]["games"][game]["subdir"]
+    # return: (streamer, url, online)
+    response = await strategy(game_url, streamer_url).parse()
+    return response
+
+async def game_call(platform, game):
+    global streamer_call
+    streamers = USST[platform]["games"][game]["subscription"].keys()
+    # platform_game_streamer_pairs = [(platform, game, streamer) for streamer in streamers]
+    streamer_coroutines = list(map(streamer_call, [platform]*len(streamers), [game]*len(streamers), streamers))
+    result = []
+    for streamer_coroutine in streamer_coroutines:
+        # response: (streamer, url, online)
+        response = await streamer_coroutine
+        result.append(response)
+    # return: {game: [(streamer1, url, online), (streamer2, url, online), ...]}
+    return {game: result}
+
+async def platform_call(platform):
+    global game_call
+    games = USST[platform]["games"].keys()
+    game_coroutines = list(map(game_call, [platform]*len(games), games))
+    result = {}
+    for game_coroutine in game_coroutines:
+        # response: {game: [(streamer, url, online), (streamer2, url, online), ...]}
+        response = await game_coroutine
+        for game in response.keys():
+            result[game] = response[game]
+    # result: {game1: [...], game2:[...], ...}
+    return result

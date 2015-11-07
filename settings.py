@@ -27,25 +27,28 @@
 #         },
 #     },
 
-from strategies import *
+from strategies import (DouyuStrategy,
+                        PandaStrategy,
+                        ZhanqiStrategy,
+                        LongzhuStrategy)
 
 
 USST = {
     "douyu": {
-        "hostname": "http://www.douyu.com",
+        "hostname": "http://www.douyutv.com",
         "strategy": DouyuStrategy,
         "games": {
             "heartstone": {
                 "subdir": "/directory/game/How",
                 "subscription": {
                     # The key is English nickname to be use in the url
-                    "qiuri": "/qiuri",
+                    "qiuri": "http://www.douyutv.com/qiuri",
                 },
             },
             "warcraft": {
                 "subdir": "/directory/game/WOW",
                 "subscription": {
-
+                    "btk": "http://www.douyutv.com/BTK",
                 },
             },
         },

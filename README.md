@@ -9,15 +9,21 @@ Such switching always cost plenty of time. This tool helps solving this problems
 
 Currently, four platforms are supported: `douyu`, `panda`, `zhanqi`, `longzhu`.
 
+## Compatibility
+
+`>= Python 3.5.0`, the latest version, is needed to run the app. These is no downward compatibility because it uses the new keywords, `async` and `await`.
+
+`>= Tornado 4.4`, the latest version, is needed to support the usage of `async` and `await` in Python 3.5.0.
+
 ## Current situation
 
 The tool is still under construction, and it may takes a few weeks to finish it.
 
 ## TODO
 
-1. Write the scrapping process of different platforms
-2. Set up the url
-3. Make it runnable
+1. Write the scrapping process of different platforms (douyu done; rest undone)
+2. Set up the url (done, but still ugly)
+3. Make it runnable (partly done)
 4. Apply PEP8 coding style
 5. Write tests
 6. Write manage script

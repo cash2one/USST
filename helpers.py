@@ -20,7 +20,6 @@ def check_game(platform, game):
 def check_streamer(platform, game, streamer):
     # Maybe the most important part of the app.
     if check_game(platform, game):
-        # strategy is platform agnostic.
-        strategy = USST[platform]["Strategy"]
-        streamer_url = USST[platform]["games"][game]["subscription"][streamer]
-        return strategy(streamer_url)
+        return streamer in USST[platform]["games"][game]["subscription"]
+    else:
+        return False

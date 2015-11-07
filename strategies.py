@@ -7,6 +7,9 @@
 
 # TODO: Choose good scrapping tool: beautifulsoup, lxml, pyquery, etc..
 
+from tornado.httpclient import AsyncHTTPClient
+from bs4 import BeautifulSoup
+
 
 class Strategy(object):
     '''
@@ -15,48 +18,63 @@ class Strategy(object):
     1. Observe the webpage and get the pattern of `name of streamers` and `url of the streamer`.
     2. Override `parse` method to write the parsing process.
     '''
-    def parse(self):
-        "Will return a dict of `streamer:url` with which StreamerHandler and check whether online"
+    async def parse(self):
+        '''
+        Will return a tuple of `(streamer, url, online)` with which StreamerHandler and check whether online
+
+        Url will be set to None if the streamer is not online
+        '''
         raise NotImplementedError('Strategy must implement `parse` method.')
 
-    def __call__(self, url, name_selector=None, url_selector=None):
-        self.url = url
-        self.name_selector = name_selector
-        self.url_selector = url_selector
-        self.parse()
+    def __init__(self, game_url, streamer_url):
+        self.game_url = game_url
+        self.streamer_url = streamer_url
 
 
 class DouyuStrategy(Strategy):
-    def parse(self):
-        pass
+    async def parse(self):
+        http_client = AsyncHTTPClient()
+        response = await http_client.fetch(self.game_url)
+        soup = BeautifulSoup(response.body, 'html.parser')
+        streamers_blocks = soup.select("#item_data ul li")
 
-    def __call__(self, url):
+        for streamers_block in streamers_blocks:
+            url_suffix = streamers_block.select(".list")[0].get("href")
+            url = "http://www.douyutv.com" + url_suffix
+            name = streamers_block.select(".nnt")[0].string
+            if url == self.streamer_url:
+                # return: (streamer, url, online)
+                return (name, url, "Online")
+        return (name, url, "Offline")
+
+
+    def __init__(self, game_url, streamer_url):
         # TODO: Replace with specific name_selector and url_selector for each platform
-        super(DouyuStrategy, self).__call__(url, ".nnt", ".list")
+        super(DouyuStrategy, self).__init__(game_url, streamer_url)
 
 
 class PandaStrategy(Strategy):
-    def parse(self):
+    async def parse(self):
         pass
 
-    def __call__(self, url):
+    def __init__(self, game_url, streamer_url):
         # TODO: Replace with specific name_selector and url_selector for each platform
-        super(DouyuStrategy, self).__call__(url, ".nnt", ".list")
+        super(PandaStrategy, self).__init__(game_url, streamer_url)
 
 
 class ZhanqiStrategy(Strategy):
-    def parse(self):
+    async def parse(self):
         pass
 
-    def __call__(self, url):
+    def __init__(self, game_url, streamer_url):
         # TODO: Replace with specific name_selector and url_selector for each platform
-        super(DouyuStrategy, self).__call__(url, ".nnt", ".list")
+        super(ZhanqiStrategy, self).__init__(game_url, streamer_url)
 
 
 class LongzhuStrategy(Strategy):
-    def parse(self):
+    async def parse(self):
         pass
 
-    def __call__(self, url):
+    def __init__(self, game_url, streamer_url):
         # TODO: Replace with specific name_selector and url_selector for each platform
-        super(DouyuStrategy, self).__call__(url, ".nnt", ".list")
+        super(LongzhuStrategy, self).__init__(game_url, streamer_url)
