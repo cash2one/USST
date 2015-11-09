@@ -58,6 +58,19 @@ class PlatformHandler(GameHandler):
         self.finish()
 
 
+class AllSubHandler(PlatformHandler):
+    def __init__(self, application, request, **kwargs):
+        super(PlatformHandler, self).__init__(application, request, **kwargs)
+
+    async def get(self):
+        '''
+        Delegate request to Handlers of different platforms.
+        '''
+        response = await allSub_call()
+        self.write(json.dumps(response))
+        self.finish()
+
+
 async def streamer_call(platform, game, streamer):
     # strategy is platform agnostic.
     strategy = USST[platform]["strategy"]
@@ -68,25 +81,34 @@ async def streamer_call(platform, game, streamer):
     return response
 
 async def game_call(platform, game):
-    print("subscription", USST[platform]["games"][game]["subscription"])
     streamers = USST[platform]["games"][game]["subscription"].keys()
-    streamer_coroutines = list(map(streamer_call, [platform]*len(streamers), [game]*len(streamers), streamers))
     result = []
-    for streamer_coroutine in streamer_coroutines:
+    for streamer in streamers:
+        streamer_coroutine = streamer_call(platform, game, streamer)
         # response: (streamer, url, online)
         response = await streamer_coroutine
         result.append(response)
-    # return: {game: [(streamer1, url, online), (streamer2, url, online), ...]}
-    return {game: result}
+    # return: [(streamer1, url, online), (streamer2, url, online), ...]
+    return result
 
 async def platform_call(platform):
     games = USST[platform]["games"].keys()
-    game_coroutines = list(map(game_call, [platform]*len(games), games))
     result = {}
-    for game_coroutine in game_coroutines:
+    for game in games:
+        game_coroutine = game_call(platform, game)
         # response: {game: [(streamer, url, online), (streamer2, url, online), ...]}
         response = await game_coroutine
-        for game in response.keys():
-            result[game] = response[game]
-    # result: {game1: [...], game2:[...], ...}
+        result[game] = response
+    # result: {game1: [...], game2: [...], ...}
+    return result
+
+async def allSub_call():
+    platforms = USST.keys()
+    result = {}
+    for platform in platforms:
+        platform_coroutine = platform_call(platform)
+        # response: {game1: [...], game2: [...], ...}
+        response = await platform_coroutine
+        result[platform] = response
+    # result: {platform1: {game: [..], game2: [...], ...}, platform2: {game: [..], game2: [...], ...}, ...}
     return result

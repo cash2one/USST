@@ -23,6 +23,7 @@ if __name__ == "__main__":
     # AsyncHTTPClient.configure('tornado.curl_httpclient.CurlAsyncHTTPClient')
     application = tornado.wsgi.WSGIApplication([
         # TODO: /(platform)/(game)/(streamer) three types of url
+        (r"^/$", AllSubHandler),
         (r"^/(?P<platform>[a-zA-Z0-9-]+)/$", PlatformHandler),
         (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/$", GameHandler),
         (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/(?P<streamer>[a-zA-Z0-9-]+)/$", StreamerHandler),
