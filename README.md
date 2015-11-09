@@ -29,12 +29,13 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 6. Write tests
 7. Write manage script
 8. Add Travis CI
-9. Make setup easy
+9. <del>Make setup easy<del>
 10. Write client tool to control settings.py
 11. Browser plugins to control settings.py
 12. Add exception handling
 13. Add logging
 14. Add UI interface
+15. Add conf file in the system
 
 ## Contributing
 

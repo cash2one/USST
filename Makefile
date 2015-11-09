@@ -11,4 +11,10 @@ flake8:
 	flake8 $(CHECK_DIRS) --config=$(FLAKE8_CONFIG_DIR)
 
 run:
-	python wsgi.py
+	python -m usst.wsgi
+
+build:
+	python setup.py build
+
+install:
+	python setup.py install

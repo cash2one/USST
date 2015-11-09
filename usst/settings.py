@@ -5,10 +5,10 @@
 # http://opensource.org/licenses/MIT
 #
 
-from strategies import (DouyuStrategy,
-                        PandaStrategy,
-                        ZhanqiStrategy,
-                        LongzhuStrategy)
+from usst.strategies import (DouyuStrategy,
+                             PandaStrategy,
+                             ZhanqiStrategy,
+                             LongzhuStrategy)
 
 
 USST = {

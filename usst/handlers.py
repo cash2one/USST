@@ -6,11 +6,13 @@
 #
 
 import json
-from settings import USST
+
+from usst.settings import USST
 from tornado.web import RequestHandler
-from helpers import (check_game,
-                     check_platform,
-                     check_streamer)
+
+from usst.helpers import (check_game,
+                          check_platform,
+                          check_streamer)
 
 
 class StreamerHandler(RequestHandler):
