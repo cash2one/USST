@@ -17,14 +17,14 @@ USST = {
         "strategy": DouyuStrategy,
         "games": {
             "heartstone": {
-                "subdir": "/directory/game/How",
+                "game_url": "http://www.douyutv.com/directory/game/How",
                 "subscription": {
                     # The key is English nickname to be use in the url
                     "qiuri": "http://www.douyutv.com/qiuri",
                 },
             },
             "warcraft": {
-                "subdir": "/directory/game/WOW",
+                "game_url": "http://www.douyutv.com/directory/game/WOW",
                 "subscription": {
                     "btk": "http://www.douyutv.com/BTK",
                 },
@@ -36,13 +36,13 @@ USST = {
         "strategy": PandaStrategy,
         "games": {
             "heartstone": {
-                "subdir": "/cate/hearthstone",
+                "game_url": "/cate/hearthstone",
                 "subscription": {
 
                 },
             },
             "lol": {
-                "subdir": "/cate/lol",
+                "game_url": "/cate/lol",
                 "subscription": {
 
                 },
@@ -54,13 +54,13 @@ USST = {
         "strategy": ZhanqiStrategy,
         "games": {
             "heartstone": {
-                "subdir": "/games/how",
+                "game_url": "/games/how",
                 "subscription": {
 
                 },
             },
             "warcraft": {
-                "subdir": "/games/wow",
+                "game_url": "/games/wow",
                 "subscription": {
 
                 },
@@ -72,13 +72,13 @@ USST = {
         "strategy": LongzhuStrategy,
         "games": {
             "beauty": {
-                "subdir": "/channels/belle",
+                "game_url": "/channels/belle",
                 "subscription": {
 
                 },
             },
             "cf": {
-                "subdir": "/channels/cf",
+                "game_url": "/channels/cf",
                 "subscription": {
 
                 },

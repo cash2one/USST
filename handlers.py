@@ -62,10 +62,9 @@ async def streamer_call(platform, game, streamer):
     # strategy is platform agnostic.
     strategy = USST[platform]["strategy"]
     streamer_url = USST[platform]["games"][game]["subscription"][streamer]
-    print("streamer_url", streamer_url)
-    game_url = USST[platform]["hostname"] + USST[platform]["games"][game]["subdir"]
+    game_url = USST[platform]["games"][game]["game_url"]
     # return: (streamer, url, online)
-    response = await strategy(game_url, streamer_url).parse()
+    response = await strategy(game_url, streamer, streamer_url).parse()
     return response
 
 async def game_call(platform, game):
