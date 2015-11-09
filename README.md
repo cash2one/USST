@@ -13,7 +13,7 @@ Currently, four platforms are supported: `douyu`, `panda`, `zhanqi`, `longzhu`.
 
 `>= Python 3.5.0`, the latest version, is needed to run the app. These is no downward compatibility because it uses the new keywords, `async` and `await`.
 
-`>= Tornado 4.4`, the latest version, is needed to support the usage of `async` and `await` in Python 3.5.0.
+`>= Tornado 4.3`, the latest version, is needed to support the usage of `async` and `await` in Python 3.5.0.
 
 ## Current situation
 

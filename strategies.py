@@ -37,15 +37,17 @@ class DouyuStrategy(Strategy):
         response = await http_client.fetch(self.game_url)
         soup = BeautifulSoup(response.body, 'html.parser')
         streamers_blocks = soup.select("#item_data ul li")
+        print("game_url", self.game_url, "streamer_url", self.streamer_url)
 
         for streamers_block in streamers_blocks:
             url_suffix = streamers_block.select(".list")[0].get("href")
             url = "http://www.douyutv.com" + url_suffix
             name = streamers_block.select(".nnt")[0].string
             if url == self.streamer_url:
+                print("url", url, "streamer_url", self.streamer_url)
                 # return: (streamer, url, online)
-                return (name, url, "Online")
-        return (name, url, "Offline")
+                return (name, self.streamer_url, "Online")
+        return (name, self.streamer_url, "Offline")
 
 
     def __init__(self, game_url, streamer_url):

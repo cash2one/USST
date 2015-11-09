@@ -62,15 +62,14 @@ async def streamer_call(platform, game, streamer):
     # strategy is platform agnostic.
     strategy = USST[platform]["strategy"]
     streamer_url = USST[platform]["games"][game]["subscription"][streamer]
+    print("streamer_url", streamer_url)
     game_url = USST[platform]["hostname"] + USST[platform]["games"][game]["subdir"]
     # return: (streamer, url, online)
     response = await strategy(game_url, streamer_url).parse()
     return response
 
 async def game_call(platform, game):
-    global streamer_call
     streamers = USST[platform]["games"][game]["subscription"].keys()
-    # platform_game_streamer_pairs = [(platform, game, streamer) for streamer in streamers]
     streamer_coroutines = list(map(streamer_call, [platform]*len(streamers), [game]*len(streamers), streamers))
     result = []
     for streamer_coroutine in streamer_coroutines:
@@ -81,7 +80,6 @@ async def game_call(platform, game):
     return {game: result}
 
 async def platform_call(platform):
-    global game_call
     games = USST[platform]["games"].keys()
     game_coroutines = list(map(game_call, [platform]*len(games), games))
     result = {}
