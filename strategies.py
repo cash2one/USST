@@ -5,6 +5,15 @@
 # http://opensource.org/licenses/MIT
 #
 
+'''
+strategy refers to the actual process of users' scrapping information from pages of different platform.
+
+For example:
+
+strategy of douyu defines the process where you get the `urls` of streamers of a certain pages of douyu.
+'''
+
+
 # TODO: Choose good scrapping tool: beautifulsoup, lxml, pyquery, etc..
 
 from tornado.httpclient import AsyncHTTPClient
@@ -37,13 +46,11 @@ class DouyuStrategy(Strategy):
         response = await http_client.fetch(self.game_url)
         soup = BeautifulSoup(response.body, 'html.parser')
         streamers_blocks = soup.select("#item_data ul li")
-        # print("game_url", self.game_url, "streamer_url", self.streamer_url)
 
         for streamers_block in streamers_blocks:
             url_suffix = streamers_block.select(".list")[0].get("href")
             url = "http://www.douyutv.com" + url_suffix
             if url == self.streamer_url:
-                # print("url", url, "streamer_url", self.streamer_url)
                 # return: (streamer, url, online)
                 return (self.streamer, self.streamer_url, "Online")
         return (self.streamer, self.streamer_url, "Offline")
