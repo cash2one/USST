@@ -98,7 +98,7 @@ async def platform_call(platform):
     result = {}
     for game in games:
         game_coroutine = game_call(platform, game)
-        # response: {game: [(streamer, url, online), (streamer2, url, online), ...]}
+        # response: [(streamer, url, online), (streamer2, url, online), ...]
         response = await game_coroutine
         result[game] = response
     # result: {game1: [...], game2: [...], ...}
