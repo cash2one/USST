@@ -36,15 +36,15 @@ USST = {
         "strategy": PandaStrategy,
         "games": {
             "heartstone": {
-                "game_url": "/cate/hearthstone",
+                "game_url": "http://www.panda.tv/cate/hearthstone",
                 "subscription": {
-
+                    "wangshifu": "http://www.panda.tv/room/10029",
                 },
             },
             "lol": {
-                "game_url": "/cate/lol",
+                "game_url": "http://www.panda.tv/cate/lol",
                 "subscription": {
-
+                    "GPS": "http://www.panda.tv/room/10583",
                 },
             },
         },
@@ -54,15 +54,15 @@ USST = {
         "strategy": ZhanqiStrategy,
         "games": {
             "heartstone": {
-                "game_url": "/games/how",
+                "game_url": "http://www.zhanqi.tv/games/how",
                 "subscription": {
-
+                    "sleepySM": "http://www.zhanqi.tv/shaman",
                 },
             },
-            "warcraft": {
-                "game_url": "/games/wow",
+            "dnf": {
+                "game_url": "http://www.zhanqi.tv/games/dnf",
                 "subscription": {
-
+                    "Rain__Y": "http://www.zhanqi.tv/rain_y",
                 },
             },
         },
@@ -71,16 +71,16 @@ USST = {
         "hostname": "http://longzhu.com",
         "strategy": LongzhuStrategy,
         "games": {
-            "beauty": {
-                "game_url": "/channels/belle",
+            "lol": {
+                "game_url": "http://longzhu.com/channels/lol",
                 "subscription": {
-
+                    "haiwang": "http://star.longzhu.com/haiwang?from=challcontent",
                 },
             },
             "cf": {
-                "game_url": "/channels/cf",
+                "game_url": "http://longzhu.com/channels/cf",
                 "subscription": {
-
+                    "jueji": "http://star.longzhu.com/102404?from=challcontent",
                 },
             },
         },

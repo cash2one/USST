@@ -68,6 +68,7 @@ async def streamer_call(platform, game, streamer):
     return response
 
 async def game_call(platform, game):
+    print("subscription", USST[platform]["games"][game]["subscription"])
     streamers = USST[platform]["games"][game]["subscription"].keys()
     streamer_coroutines = list(map(streamer_call, [platform]*len(streamers), [game]*len(streamers), streamers))
     result = []

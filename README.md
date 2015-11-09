@@ -21,7 +21,7 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 
 ## TODO
 
-1. Write the scrapping process of different platforms (douyu done; rest undone)
+1. Write the scrapping process of different platforms (all done; pattern of different platforms are similiar)
 2. Set up the url (done, but still ugly)
 3. Make it runnable (partly done)
 4. Apply PEP8 coding style
