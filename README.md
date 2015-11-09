@@ -21,17 +21,18 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 
 ## TODO
 
-1. Write the scrapping process of different platforms (all done; pattern of different platforms are similiar)
-2. Set up the url (done, but still ugly)
-3. Make it runnable (partly done)
-4. Apply PEP8 coding style
-5. Write tests
-6. Write manage script
-7. Add Travis CI
-8. Make setup easy
-9. Write client tool to control settings.py
-10. Browser plugins to control settings.py
-11. .......
+1. Write the scrapping process of different platforms (done)
+2. Finish all handlers (done)
+3. Set up the url (done, but still ugly)
+4. Make it runnable (done)
+5. Apply PEP8 coding style
+6. Write tests
+7. Write manage script
+8. Add Travis CI
+9. Make setup easy
+10. Write client tool to control settings.py
+11. Browser plugins to control settings.py
+12. .......
 
 ## Contributing
 

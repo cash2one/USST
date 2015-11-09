@@ -12,7 +12,7 @@ def check_platform(platform):
     return platform in USST
 
 def check_game(platform, game):
-    if check_platform():
+    if check_platform(platform):
         return game in USST[platform]["games"]
     else:
         return False
