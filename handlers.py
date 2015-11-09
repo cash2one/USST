@@ -5,14 +5,12 @@
 # http://opensource.org/licenses/MIT
 #
 
+import json
+from settings import USST
 from tornado.web import RequestHandler
 from helpers import (check_game,
                      check_platform,
                      check_streamer)
-import json
-
-# temporary
-from settings import USST
 
 
 class StreamerHandler(RequestHandler):

@@ -18,7 +18,6 @@ def check_game(platform, game):
         return False
 
 def check_streamer(platform, game, streamer):
-    # Maybe the most important part of the app.
     if check_game(platform, game):
         return streamer in USST[platform]["games"][game]["subscription"]
     else:
