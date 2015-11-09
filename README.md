@@ -19,6 +19,12 @@ Currently, four platforms are supported: `douyu`, `panda`, `zhanqi`, `longzhu`.
 
 The tool is still under construction, and it may takes a few weeks to finish it.
 
+## How To Run
+
+1. `make install`
+2. `python -m usst.wsgi` or other methods to run wsgi app (see `examples`)
+3. access it in browser
+
 ## TODO
 
 1. <del>Write the scrapping process of different platforms<del>
