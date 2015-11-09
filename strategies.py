@@ -11,6 +11,8 @@ strategy refers to the actual process of users' scrapping information from pages
 For example:
 
 strategy of douyu defines the process where you get the `urls` of streamers of a certain pages of douyu.
+
+Most strategies are DouyuStrategy-alike.
 '''
 
 

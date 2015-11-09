@@ -21,10 +21,10 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 
 ## TODO
 
-1. Write the scrapping process of different platforms (done)
-2. Finish all handlers (done)
-3. Set up the url (done, but still ugly)
-4. Make it runnable (done)
+1. <del>Write the scrapping process of different platforms<del>
+2. <del>Finish all handlers<del>
+3. <del>Set up the url<del>
+4. <del>Make it runnable<del>
 5. Apply PEP8 coding style
 6. Write tests
 7. Write manage script
@@ -32,7 +32,9 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 9. Make setup easy
 10. Write client tool to control settings.py
 11. Browser plugins to control settings.py
-12. .......
+12. Add exception handling
+13. Add logging
+14. Add UI interface
 
 ## Contributing
 
