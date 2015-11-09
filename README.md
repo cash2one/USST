@@ -25,7 +25,7 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 2. <del>Finish all handlers<del>
 3. <del>Set up the url<del>
 4. <del>Make it runnable<del>
-5. Apply PEP8 coding style
+5. <del>Apply flake8<del>
 6. Write tests
 7. Write manage script
 8. Add Travis CI

@@ -15,10 +15,9 @@ from helpers import (check_game,
 
 class StreamerHandler(RequestHandler):
     def __init__(self, application, request, **kwargs):
-        super(RequestHandler, self).__init__(application, request, **kwargs)
+        super(StreamerHandler, self).__init__(application, request, **kwargs)
 
     async def get(self, platform, game, streamer):
-        # TODO: This fetches information of a streamer of a games of a platform.
         '''
         1. Check streamer
         '''
@@ -30,10 +29,9 @@ class StreamerHandler(RequestHandler):
 
 class GameHandler(RequestHandler):
     def __init__(self, application, request, **kwargs):
-        super(RequestHandler, self).__init__(application, request, **kwargs)
+        super(GameHandler, self).__init__(application, request, **kwargs)
 
     async def get(self, platform, game):
-        # TODO: This fetches all information of all streamer of a games of a platform.
         '''
         1. Check game
         2. Call StreamerHandler
@@ -46,10 +44,9 @@ class GameHandler(RequestHandler):
 
 class PlatformHandler(RequestHandler):
     def __init__(self, application, request, **kwargs):
-        super(RequestHandler, self).__init__(application, request, **kwargs)
+        super(PlatformHandler, self).__init__(application, request, **kwargs)
 
     async def get(self, platform):
-        # TODO: This fetches all information of all streamers of all games of a platform.
         '''
         1. Check platform
         2. Call GameHandlers
@@ -62,7 +59,7 @@ class PlatformHandler(RequestHandler):
 
 class AllSubHandler(RequestHandler):
     def __init__(self, application, request, **kwargs):
-        super(RequestHandler, self).__init__(application, request, **kwargs)
+        super(AllSubHandler, self).__init__(application, request, **kwargs)
 
     async def get(self):
         '''

@@ -10,25 +10,29 @@ import tornado.web
 import tornado.wsgi
 from tornado import httpserver
 from tornado.options import define, options
-from handlers import *
+from handlers import (AllSubHandler,
+                      PlatformHandler,
+                      GameHandler,
+                      StreamerHandler)
 
 
-settings = {'debug' : True}
-define("debug",default=True,help="Debug Mode",type=bool)
-define("port", default=8080, help="runS on given port", type=int)
+settings = {'debug': True}
+define("debug", default=True, help="Debug Mode", type=bool)
+define("port", default=8080, help="run on given port", type=int)
 
 # Using curl client provides better performance
 # from tornado.httpclient import AsyncHTTPClient
 # AsyncHTTPClient.configure('tornado.curl_httpclient.CurlAsyncHTTPClient')
 application = tornado.wsgi.WSGIApplication([
-        # TODO: /(platform)/(game)/(streamer) three types of url
-        (r"^/$", AllSubHandler),
-        (r"^/(?P<platform>[a-zA-Z0-9-]+)/$", PlatformHandler),
-        (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/$", GameHandler),
-        (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/(?P<streamer>[a-zA-Z0-9-]+)/$", StreamerHandler),
-    ])
+    (r"^/$", AllSubHandler),
+    (r"^/(?P<platform>[a-zA-Z0-9-]+)/$", PlatformHandler),
+    (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/$", GameHandler),
+    (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/(?P<streamer>[a-zA-Z0-9-]+)/$", StreamerHandler),
+])
 
 if __name__ == "__main__":
+    tornado.options.parse_command_line()
     http_server = httpserver.HTTPServer(application)
+    print(options.port)
     http_server.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()

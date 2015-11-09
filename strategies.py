@@ -75,7 +75,6 @@ class PandaStrategy(Strategy):
                 return (self.streamer, self.streamer_url, "Online")
         return (self.streamer, self.streamer_url, "Offline")
 
-
     def __init__(self, game_url, streamer, streamer_url):
         super(PandaStrategy, self).__init__(game_url, streamer, streamer_url)
 
