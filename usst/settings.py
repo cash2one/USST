@@ -5,84 +5,18 @@
 # http://opensource.org/licenses/MIT
 #
 
-from usst.strategies import (DouyuStrategy,
-                             PandaStrategy,
-                             ZhanqiStrategy,
-                             LongzhuStrategy)
+# TODO: auto_discover
 
+from usst.apps.douyu.setting import setting as douyu_setting
+from usst.apps.panda.setting import setting as panda_setting
+from usst.apps.zhanqi.setting import setting as zhanqi_setting
+from usst.apps.longzhu.setting import setting as longzhu_setting
 
-USST = {
-    "douyu": {
-        "hostname": "http://www.douyutv.com",
-        "strategy": DouyuStrategy,
-        "games": {
-            "heartstone": {
-                "game_url": "http://www.douyutv.com/directory/game/How",
-                "subscription": {
-                    # The key is English nickname to be use in the url
-                    "qiuri": "http://www.douyutv.com/qiuri",
-                },
-            },
-            "warcraft": {
-                "game_url": "http://www.douyutv.com/directory/game/WOW",
-                "subscription": {
-                    "btk": "http://www.douyutv.com/BTK",
-                },
-            },
-        },
-    },
-    "panda": {
-        "hostname": "http://www.panda.tv",
-        "strategy": PandaStrategy,
-        "games": {
-            "heartstone": {
-                "game_url": "http://www.panda.tv/cate/hearthstone",
-                "subscription": {
-                    "wangshifu": "http://www.panda.tv/room/10029",
-                },
-            },
-            "lol": {
-                "game_url": "http://www.panda.tv/cate/lol",
-                "subscription": {
-                    "GPS": "http://www.panda.tv/room/10583",
-                },
-            },
-        },
-    },
-    "zhanqi": {
-        "hostname": "http://www.zhanqi.tv",
-        "strategy": ZhanqiStrategy,
-        "games": {
-            "heartstone": {
-                "game_url": "http://www.zhanqi.tv/games/how",
-                "subscription": {
-                    "sleepySM": "http://www.zhanqi.tv/shaman",
-                },
-            },
-            "dnf": {
-                "game_url": "http://www.zhanqi.tv/games/dnf",
-                "subscription": {
-                    "Rain__Y": "http://www.zhanqi.tv/rain_y",
-                },
-            },
-        },
-    },
-    "longzhu": {
-        "hostname": "http://longzhu.com",
-        "strategy": LongzhuStrategy,
-        "games": {
-            "lol": {
-                "game_url": "http://longzhu.com/channels/lol",
-                "subscription": {
-                    "haiwang": "http://star.longzhu.com/haiwang?from=challcontent",
-                },
-            },
-            "cf": {
-                "game_url": "http://longzhu.com/channels/cf",
-                "subscription": {
-                    "jueji": "http://star.longzhu.com/102404?from=challcontent",
-                },
-            },
-        },
-    },
-}
+USST = {}
+
+USST.update(douyu_setting)
+USST.update(panda_setting)
+USST.update(zhanqi_setting)
+USST.update(longzhu_setting)
+
+# TODO: load setting from $HOME/.usst/config.json to override default setting

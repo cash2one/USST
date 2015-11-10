@@ -32,7 +32,7 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 3. <del>Set up the url<del>
 4. <del>Make it runnable<del>
 5. <del>Apply flake8<del>
-6. Write tests
+6. Write tests (currently learning how to design test cases)
 7. Write manage script
 8. Add Travis CI
 9. <del>Make setup easy<del>
@@ -41,7 +41,7 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 12. Add exception handling
 13. Add logging
 14. Add UI interface
-15. Add conf file in the system
+15. <del>Use json conf file to replace settings.py<del> and add to system
 
 ## Contributing
 

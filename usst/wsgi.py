@@ -27,10 +27,10 @@ except:
 
 # when run with wsgi server, import this application object
 app = tornado.wsgi.WSGIApplication([
-        (r"^/$", AllSubHandler),
-        (r"^/(?P<platform>[a-zA-Z0-9-]+)/$", PlatformHandler),
-        (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/$", GameHandler),
-        (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/(?P<streamer>[a-zA-Z0-9-]+)/$", StreamerHandler),
+    (r"^/$", AllSubHandler),
+    (r"^/(?P<platform>[a-zA-Z0-9-]+)/$", PlatformHandler),
+    (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/$", GameHandler),
+    (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/(?P<streamer>[a-zA-Z0-9-]+)/$", StreamerHandler),
 ])
 
 

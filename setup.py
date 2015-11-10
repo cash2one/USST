@@ -35,7 +35,7 @@ setup(
     author='lao605',
     author_email='laozhikun1994@gmail.com',
     # https://pythonhosted.org/setuptools/setuptools.html#id9
-    packages=find_packages(),
+    packages=find_packages(exclude=["tests", ]),
     include_package_data=True,
     install_requires=install_requires,
     dependency_links=dependency_links,

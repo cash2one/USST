@@ -6,13 +6,11 @@
 #
 
 import json
-
 from usst.settings import USST
 from tornado.web import RequestHandler
-
-from usst.helpers import (check_game,
-                          check_platform,
-                          check_streamer)
+from usst.check_helpers import (check_game,
+                                check_platform,
+                                check_streamer)
 
 
 class StreamerHandler(RequestHandler):
@@ -73,6 +71,7 @@ class AllSubHandler(RequestHandler):
 
 
 async def streamer_call(platform, game, streamer):
+    # TODO: refactor -- crawling once for streamers of a game is enough
     # strategy is platform agnostic.
     strategy = USST[platform]["strategy"]
     streamer_url = USST[platform]["games"][game]["subscription"][streamer]
