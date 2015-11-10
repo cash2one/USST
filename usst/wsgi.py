@@ -14,6 +14,7 @@ from usst.handlers import (AllSubHandler,
                            GameHandler,
                            StreamerHandler)
 
+
 # when run with wsgi server, import this application object
 app = tornado.wsgi.WSGIApplication([
     (r"^/$", AllSubHandler),

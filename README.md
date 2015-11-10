@@ -39,11 +39,13 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 10. Write client tool to control settings.py
 11. Browser plugins to control settings.py
 12. Add exception handling
-13. Add logging
+13. <del>Add logging<del>
 14. Add UI interface
-15. <del>Use json conf file to replace settings.py<del> and add to system
-16. <del>Add command line executable `usst`<del>
-17. <del>Add MANIFEST to determine files that go into the source tarball<del>
+15. <del>Use json conf file to replace settings.py<del>
+16. <del>Add conf file to system<del> (putting conf file in json format in 
+user system during installation seems impossible without releasing the app as package like `rpm`, `deb`, and etc.)
+17. <del>Add command line executable `usst`<del>
+18. <del>Add MANIFEST to determine files that go into the source tarball<del>
 
 ## Contributing
 
