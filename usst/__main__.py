@@ -4,6 +4,10 @@
 # http://opensource.org/licenses/MIT
 #
 
+'''
+Launch script
+'''
+
 import sys
 import tornado.web
 import tornado.log
@@ -30,11 +34,8 @@ except:
 
 
 def main(args=None):
-    """The main routine."""
     if args is None:
         args = sys.argv[1:]
-
-    # TODO: Do argument parsing
 
     logger.setLevel(tornado.log.logging.DEBUG)
     tornado.options.parse_command_line()
@@ -44,4 +45,7 @@ def main(args=None):
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("USST server is down.")
