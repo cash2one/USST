@@ -5,7 +5,7 @@
 # http://opensource.org/licenses/MIT
 #
 
-from usst.settings import USST
+from usst.core.settings import USST
 
 
 def check_platform(platform):

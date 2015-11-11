@@ -5,9 +5,10 @@
 # http://opensource.org/licenses/MIT
 #
 
-from usst.strategy_helper import Strategy
-from tornado.httpclient import AsyncHTTPClient
 from bs4 import BeautifulSoup
+from tornado.httpclient import AsyncHTTPClient
+
+from usst.core.strategy_helper import Strategy
 
 
 class PandaStrategy(Strategy):

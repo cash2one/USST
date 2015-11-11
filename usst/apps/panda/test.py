@@ -9,12 +9,11 @@ from tornado.testing import AsyncHTTPTestCase
 from usst.wsgi import app
 
 
-class DouyuTestCase(AsyncHTTPTestCase):
-    def setUp(self):
-        self.USST
-
+class PandaTestCase(AsyncHTTPTestCase):
     def get_app(self):
         return app
 
     def test_http_fetch(self):
-        self.fetch("/douyu/")
+        response = self.fetch("/panda/")
+
+        self.assertEqual(response.code, 200)

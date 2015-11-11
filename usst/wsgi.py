@@ -8,12 +8,10 @@
 import tornado.autoreload
 import tornado.wsgi
 
-
-from usst.handlers import (AllSubHandler,
-                           PlatformHandler,
-                           GameHandler,
-                           StreamerHandler)
-
+from usst.core.handlers import (AllSubHandler,
+                                PlatformHandler,
+                                GameHandler,
+                                StreamerHandler)
 
 # when run with wsgi server, import this application object
 app = tornado.wsgi.WSGIApplication([
