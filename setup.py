@@ -36,6 +36,12 @@ setup(
     author_email='laozhikun1994@gmail.com',
     # https://pythonhosted.org/setuptools/setuptools.html#id9
     packages=find_packages(),
+    entry_points={
+        'console_scripts': [
+            # "name_of_executable = module.with:function_to_execute"
+            'usst = usst.__main__:main'
+        ]
+    },
     include_package_data=True,
     install_requires=install_requires,
     dependency_links=dependency_links,

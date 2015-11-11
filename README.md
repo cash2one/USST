@@ -42,6 +42,8 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 13. Add logging
 14. Add UI interface
 15. <del>Use json conf file to replace settings.py<del> and add to system
+16. <del>Add command line executable `usst`<del>
+17. <del>Add MANIFEST to determine files that go into the source tarball<del>
 
 ## Contributing
 
