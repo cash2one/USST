@@ -1,0 +1,9 @@
+include manage.py
+include LICENSE
+include setup.py
+include tox.ini
+include README.md
+include requirements.txt
+include Makefile
+recursive-include usst *
+global-exclude .pyc .pyo
