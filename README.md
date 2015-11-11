@@ -22,7 +22,7 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 ## How To Run
 
 1. `make install`
-2. `python -m usst.wsgi` or other methods to run wsgi app (see `examples`)
+2. `python -m usst` or `usst` other methods to run wsgi app (see `examples`)
 3. access it in browser
 
 ## TODO
@@ -36,8 +36,8 @@ The tool is still under construction, and it may takes a few weeks to finish it.
 7. Write manage script
 8. Add Travis CI
 9. <del>Make setup easy<del>
-10. Write client tool to control settings.py
-11. Browser plugins to control settings.py
+10. <del>Write client tool to control settings.py<del>
+11. <del>Browser plugins to control settings.py<del>
 12. Add exception handling
 13. <del>Add logging<del>
 14. Add UI interface
