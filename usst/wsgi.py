@@ -7,6 +7,7 @@
 
 import tornado.autoreload
 import tornado.wsgi
+from usst.core.settings import default_settings
 from usst.core.handlers import (AllSubHandler,
                                 PlatformHandler,
                                 GameHandler,
@@ -25,3 +26,5 @@ def application(setting):
 # Converts a tornado.web.Application instance into a WSGI application.
 def wsgi_application(setting):
     return tornado.wsgi.WSGIAdapter(application(setting))
+
+default_wsgi_application = wsgi_application(default_settings)
