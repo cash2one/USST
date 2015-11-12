@@ -10,8 +10,12 @@ import os
 from . import __PLATFORM__
 from .strategy import ZhanqiStrategy
 
-setting_path = os.path.join(os.path.dirname(__file__), "setting.json")
 
-with open(setting_path, "r") as f:
-    setting = json.load(f)
-    setting[__PLATFORM__]["strategy"] = ZhanqiStrategy
+def load_setting(path):
+    setting_path = os.path.join(os.path.dirname(__file__), path)
+    with open(setting_path, "r") as f:
+        setting = json.load(f)
+        setting[__PLATFORM__]["strategy"] = ZhanqiStrategy
+        return setting
+
+setting = load_setting("setting.json")

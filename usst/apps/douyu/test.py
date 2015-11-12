@@ -6,12 +6,13 @@
 #
 
 from tornado.testing import AsyncHTTPTestCase
-from usst.wsgi import app
+from usst.wsgi import application
+from .setting import load_setting
 
 
 class DouyuTestCase(AsyncHTTPTestCase):
     def get_app(self):
-        return app
+        return application(load_setting("fixtures/douyu_test.json"))
 
     def test_http_fetch(self):
         response = self.fetch("/douyu/")

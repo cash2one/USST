@@ -11,8 +11,11 @@ from . import __PLATFORM__
 from .strategy import DouyuStrategy
 
 
-setting_path = os.path.join(os.path.dirname(__file__), "setting.json")
+def load_setting(path):
+    setting_path = os.path.join(os.path.dirname(__file__), path)
+    with open(setting_path, "r") as f:
+        setting = json.load(f)
+        setting[__PLATFORM__]["strategy"] = DouyuStrategy
+        return setting
 
-with open(setting_path, "r") as f:
-    setting = json.load(f)
-    setting[__PLATFORM__]["strategy"] = DouyuStrategy
+setting = load_setting("setting.json")

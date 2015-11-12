@@ -8,10 +8,10 @@
 from bs4 import BeautifulSoup
 from tornado.httpclient import AsyncHTTPClient
 
-from usst.core.strategy_helper import Strategy
+from usst.core.strategy_helper import BaseStrategy
 
 
-class ZhanqiStrategy(Strategy):
+class ZhanqiStrategy(BaseStrategy):
     async def parse(self):
         http_client = AsyncHTTPClient()
         response = await http_client.fetch(self.game_url)

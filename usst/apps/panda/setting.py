@@ -10,8 +10,12 @@ import os
 from . import __PLATFORM__
 from .strategy import PandaStrategy
 
-setting_path = os.path.join(os.path.dirname(__file__), "setting.json")
 
-with open(setting_path, "r") as f:
-    setting = json.load(f)
-    setting[__PLATFORM__]["strategy"] = PandaStrategy
+def load_setting(path):
+    setting_path = os.path.join(os.path.dirname(__file__), path)
+    with open(setting_path, "r") as f:
+        setting = json.load(f)
+        setting[__PLATFORM__]["strategy"] = PandaStrategy
+        return setting
+
+setting = load_setting("setting.json")

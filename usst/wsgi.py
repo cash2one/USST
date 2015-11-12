@@ -7,20 +7,21 @@
 
 import tornado.autoreload
 import tornado.wsgi
-
 from usst.core.handlers import (AllSubHandler,
                                 PlatformHandler,
                                 GameHandler,
                                 StreamerHandler)
 
-# when run with wsgi server, import this application object
-app = tornado.wsgi.WSGIApplication([
-    (r"^/$", AllSubHandler),
-    (r"^/(?P<platform>[a-zA-Z0-9-]+)/$", PlatformHandler),
-    (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/$", GameHandler),
-    (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/(?P<streamer>[a-zA-Z0-9-]+)/$", StreamerHandler),
-])
+
+def application(setting):
+    return tornado.wsgi.WSGIApplication([
+        (r"^/$", AllSubHandler, dict(setting=setting)),
+        (r"^/(?P<platform>[a-zA-Z0-9-]+)/$", PlatformHandler, dict(setting=setting)),
+        (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/$", GameHandler, dict(setting=setting)),
+        (r"^/(?P<platform>[a-zA-Z0-9-]+)/(?P<game>[a-zA-Z0-9-]+)/(?P<streamer>[a-zA-Z0-9-]+)/$", StreamerHandler, dict(setting=setting)),
+    ])
 
 
-def wsgi_application(environ, start_response):
-    return app(environ, start_response)
+# Converts a tornado.web.Application instance into a WSGI application.
+def wsgi_application(setting):
+    return tornado.wsgi.WSGIAdapter(application(setting))

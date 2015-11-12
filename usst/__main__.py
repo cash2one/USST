@@ -8,12 +8,13 @@
 Launch script
 '''
 
-import sys
 import tornado.web
 import tornado.log
 from tornado import httpserver
 from tornado.options import define, options
-from .wsgi import app
+from usst.core.settings import read_file
+from usst.wsgi import application
+from usst.core.settings import default_settings
 
 
 logger = tornado.log.logging.getLogger()
@@ -23,8 +24,9 @@ tornado.log.app_log.setLevel(tornado.log.logging.DEBUG)
 # no logfile by default; writing log to file will harm performance
 # tornado.options.options.__dict__['log_file_prefix'] = '/tmp/usst_access.log'
 
-define("debug", default=True, help="Debug Mode", type=bool)
 define("port", default=8000, help="Run on given port", type=int)
+define("config", default="", type=str, help="Path to config file",
+       callback=lambda path: read_file(path))
 
 try:
     from tornado.httpclient import AsyncHTTPClient
@@ -34,15 +36,12 @@ except:
 
 
 def main(args=None):
-    if args is None:
-        args = sys.argv[1:]
-
     logger.setLevel(tornado.log.logging.DEBUG)
     tornado.options.parse_command_line()
-    http_server = httpserver.HTTPServer(app)
+    setting = options.config if options.config else default_settings
+    http_server = httpserver.HTTPServer(application(setting))
     http_server.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
-
 
 if __name__ == "__main__":
     try:

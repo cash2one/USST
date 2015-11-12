@@ -19,7 +19,7 @@ Most strategies are DouyuStrategy-alike.
 # TODO: Choose good scrapping tool: beautifulsoup, lxml, pyquery, etc..
 
 
-class Strategy(object):
+class BaseStrategy(object):
     '''
     Customized strategy should inherit this class and do following steps:
 

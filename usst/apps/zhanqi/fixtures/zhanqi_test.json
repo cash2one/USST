@@ -1,0 +1,19 @@
+{
+  "zhanqi": {
+    "hostname": "http://www.zhanqi.tv",
+    "games": {
+      "heartstone": {
+        "game_url": "http://www.zhanqi.tv/games/how",
+        "subscription": {
+          "sleepySM": "http://www.zhanqi.tv/shaman"
+        }
+      },
+      "dnf": {
+        "game_url": "http://www.zhanqi.tv/games/dnf",
+        "subscription": {
+          "Rain__Y": "http://www.zhanqi.tv/rain_y"
+        }
+      }
+    }
+  }
+}

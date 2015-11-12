@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 
-PACKAGE_NAME = 'USST'
+PACKAGE_NAME = 'usst'
 PACKAGE_VER = "0.5"
 PACKAGE_DESC = 'USST - Universal Streamer Subscribing Tool '
 PACKAGE_URL = 'https://github.com/lao605/USST.git'
