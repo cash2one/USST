@@ -1,0 +1,144 @@
+actionid: tox
+msg: packaging
+cmdargs: ['/Users/Laozhikun/.pyenv/versions/3.5.0/bin/python3.5', local('/Users/Laozhikun/USST/setup.py'), 'sdist', '--formats=zip', '--dist-dir', local('/Users/Laozhikun/USST/.tox/dist')]
+env: None
+
+running sdist
+running egg_info
+writing dependency_links to usst.egg-info/dependency_links.txt
+writing requirements to usst.egg-info/requires.txt
+writing usst.egg-info/PKG-INFO
+writing top-level names to usst.egg-info/top_level.txt
+writing entry points to usst.egg-info/entry_points.txt
+reading manifest file 'usst.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '.pyo' found anywhere in distribution
+writing manifest file 'usst.egg-info/SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt
+
+running check
+creating usst-0.5
+creating usst-0.5/usst
+creating usst-0.5/usst.egg-info
+creating usst-0.5/usst/apps
+creating usst-0.5/usst/apps/douyu
+creating usst-0.5/usst/apps/douyu/fixtures
+creating usst-0.5/usst/apps/longzhu
+creating usst-0.5/usst/apps/longzhu/fixtures
+creating usst-0.5/usst/apps/panda
+creating usst-0.5/usst/apps/panda/fixtures
+creating usst-0.5/usst/apps/zhanqi
+creating usst-0.5/usst/apps/zhanqi/fixtures
+creating usst-0.5/usst/core
+creating usst-0.5/usst/core/fixtures
+creating usst-0.5/usst/templates
+making hard links in usst-0.5...
+hard linking LICENSE -> usst-0.5
+hard linking MANIFEST.in -> usst-0.5
+hard linking Makefile -> usst-0.5
+hard linking README.md -> usst-0.5
+hard linking manage.py -> usst-0.5
+hard linking requirements.txt -> usst-0.5
+hard linking setup.py -> usst-0.5
+hard linking tox.ini -> usst-0.5
+hard linking usst/__init__.py -> usst-0.5/usst
+hard linking usst/__main__.py -> usst-0.5/usst
+hard linking usst/runtests.py -> usst-0.5/usst
+hard linking usst/wsgi.py -> usst-0.5/usst
+hard linking usst.egg-info/PKG-INFO -> usst-0.5/usst.egg-info
+hard linking usst.egg-info/SOURCES.txt -> usst-0.5/usst.egg-info
+hard linking usst.egg-info/dependency_links.txt -> usst-0.5/usst.egg-info
+hard linking usst.egg-info/entry_points.txt -> usst-0.5/usst.egg-info
+hard linking usst.egg-info/requires.txt -> usst-0.5/usst.egg-info
+hard linking usst.egg-info/top_level.txt -> usst-0.5/usst.egg-info
+hard linking usst/apps/__init__.py -> usst-0.5/usst/apps
+hard linking usst/apps/douyu/__init__.py -> usst-0.5/usst/apps/douyu
+hard linking usst/apps/douyu/setting.json -> usst-0.5/usst/apps/douyu
+hard linking usst/apps/douyu/setting.py -> usst-0.5/usst/apps/douyu
+hard linking usst/apps/douyu/strategy.py -> usst-0.5/usst/apps/douyu
+hard linking usst/apps/douyu/test.py -> usst-0.5/usst/apps/douyu
+hard linking usst/apps/douyu/fixtures/douyu_test.json -> usst-0.5/usst/apps/douyu/fixtures
+hard linking usst/apps/longzhu/__init__.py -> usst-0.5/usst/apps/longzhu
+hard linking usst/apps/longzhu/setting.json -> usst-0.5/usst/apps/longzhu
+hard linking usst/apps/longzhu/setting.py -> usst-0.5/usst/apps/longzhu
+hard linking usst/apps/longzhu/strategy.py -> usst-0.5/usst/apps/longzhu
+hard linking usst/apps/longzhu/test.py -> usst-0.5/usst/apps/longzhu
+hard linking usst/apps/longzhu/fixtures/longzhu_test.json -> usst-0.5/usst/apps/longzhu/fixtures
+hard linking usst/apps/panda/__init__.py -> usst-0.5/usst/apps/panda
+hard linking usst/apps/panda/setting.json -> usst-0.5/usst/apps/panda
+hard linking usst/apps/panda/setting.py -> usst-0.5/usst/apps/panda
+hard linking usst/apps/panda/strategy.py -> usst-0.5/usst/apps/panda
+hard linking usst/apps/panda/test.py -> usst-0.5/usst/apps/panda
+hard linking usst/apps/panda/fixtures/panda_test.json -> usst-0.5/usst/apps/panda/fixtures
+hard linking usst/apps/zhanqi/__init__.py -> usst-0.5/usst/apps/zhanqi
+hard linking usst/apps/zhanqi/setting.json -> usst-0.5/usst/apps/zhanqi
+hard linking usst/apps/zhanqi/setting.py -> usst-0.5/usst/apps/zhanqi
+hard linking usst/apps/zhanqi/strategy.py -> usst-0.5/usst/apps/zhanqi
+hard linking usst/apps/zhanqi/test.py -> usst-0.5/usst/apps/zhanqi
+hard linking usst/apps/zhanqi/fixtures/zhanqi_test.json -> usst-0.5/usst/apps/zhanqi/fixtures
+hard linking usst/core/__init__.py -> usst-0.5/usst/core
+hard linking usst/core/handlers.py -> usst-0.5/usst/core
+hard linking usst/core/settings.py -> usst-0.5/usst/core
+hard linking usst/core/strategy_helper.py -> usst-0.5/usst/core
+hard linking usst/core/tests.py -> usst-0.5/usst/core
+hard linking usst/core/validator.py -> usst-0.5/usst/core
+hard linking usst/core/worker.py -> usst-0.5/usst/core
+hard linking usst/core/fixtures/validator_test.json -> usst-0.5/usst/core/fixtures
+hard linking usst/templates/index.html -> usst-0.5/usst/templates
+Writing usst-0.5/setup.cfg
+creating '.tox/dist/usst-0.5.zip' and adding 'usst-0.5' to it
+adding 'usst-0.5/LICENSE'
+adding 'usst-0.5/Makefile'
+adding 'usst-0.5/manage.py'
+adding 'usst-0.5/MANIFEST.in'
+adding 'usst-0.5/PKG-INFO'
+adding 'usst-0.5/README.md'
+adding 'usst-0.5/requirements.txt'
+adding 'usst-0.5/setup.cfg'
+adding 'usst-0.5/setup.py'
+adding 'usst-0.5/tox.ini'
+adding 'usst-0.5/usst/__init__.py'
+adding 'usst-0.5/usst/__main__.py'
+adding 'usst-0.5/usst/runtests.py'
+adding 'usst-0.5/usst/wsgi.py'
+adding 'usst-0.5/usst/apps/__init__.py'
+adding 'usst-0.5/usst/apps/douyu/__init__.py'
+adding 'usst-0.5/usst/apps/douyu/setting.json'
+adding 'usst-0.5/usst/apps/douyu/setting.py'
+adding 'usst-0.5/usst/apps/douyu/strategy.py'
+adding 'usst-0.5/usst/apps/douyu/test.py'
+adding 'usst-0.5/usst/apps/douyu/fixtures/douyu_test.json'
+adding 'usst-0.5/usst/apps/longzhu/__init__.py'
+adding 'usst-0.5/usst/apps/longzhu/setting.json'
+adding 'usst-0.5/usst/apps/longzhu/setting.py'
+adding 'usst-0.5/usst/apps/longzhu/strategy.py'
+adding 'usst-0.5/usst/apps/longzhu/test.py'
+adding 'usst-0.5/usst/apps/longzhu/fixtures/longzhu_test.json'
+adding 'usst-0.5/usst/apps/panda/__init__.py'
+adding 'usst-0.5/usst/apps/panda/setting.json'
+adding 'usst-0.5/usst/apps/panda/setting.py'
+adding 'usst-0.5/usst/apps/panda/strategy.py'
+adding 'usst-0.5/usst/apps/panda/test.py'
+adding 'usst-0.5/usst/apps/panda/fixtures/panda_test.json'
+adding 'usst-0.5/usst/apps/zhanqi/__init__.py'
+adding 'usst-0.5/usst/apps/zhanqi/setting.json'
+adding 'usst-0.5/usst/apps/zhanqi/setting.py'
+adding 'usst-0.5/usst/apps/zhanqi/strategy.py'
+adding 'usst-0.5/usst/apps/zhanqi/test.py'
+adding 'usst-0.5/usst/apps/zhanqi/fixtures/zhanqi_test.json'
+adding 'usst-0.5/usst/core/__init__.py'
+adding 'usst-0.5/usst/core/handlers.py'
+adding 'usst-0.5/usst/core/settings.py'
+adding 'usst-0.5/usst/core/strategy_helper.py'
+adding 'usst-0.5/usst/core/tests.py'
+adding 'usst-0.5/usst/core/validator.py'
+adding 'usst-0.5/usst/core/worker.py'
+adding 'usst-0.5/usst/core/fixtures/validator_test.json'
+adding 'usst-0.5/usst/templates/index.html'
+adding 'usst-0.5/usst.egg-info/dependency_links.txt'
+adding 'usst-0.5/usst.egg-info/entry_points.txt'
+adding 'usst-0.5/usst.egg-info/PKG-INFO'
+adding 'usst-0.5/usst.egg-info/requires.txt'
+adding 'usst-0.5/usst.egg-info/SOURCES.txt'
+adding 'usst-0.5/usst.egg-info/top_level.txt'
+removing 'usst-0.5' (and everything under it)

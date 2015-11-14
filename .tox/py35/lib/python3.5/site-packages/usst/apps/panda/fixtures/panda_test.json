@@ -1,0 +1,19 @@
+{
+  "panda": {
+    "hostname": "http://www.panda.tv",
+    "games": {
+      "heartstone": {
+        "game_url": "http://www.panda.tv/cate/hearthstone",
+        "subscription": {
+          "wangshifu": "http://www.panda.tv/room/10029"
+        }
+      },
+      "lol": {
+        "game_url": "http://www.panda.tv/cate/lol",
+        "subscription": {
+          "GPS": "http://www.panda.tv/room/10583"
+        }
+      }
+    }
+  }
+}

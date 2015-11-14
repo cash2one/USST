@@ -1,0 +1,70 @@
+{
+    "douyu": {
+        "hostname": "http://www.douyutv.com",
+        "games": {
+            "heartstone": {
+                "subdir": "http://www.douyutv.com/directory/game/How",
+                "subscription": {
+                    "qiuri": "http://www.douyutv.com/qiuri"
+                }
+            },
+            "warcraft": {
+                "subdir": "http://www.douyutv.com/directory/game/WOW",
+                "subscription": {
+                    "btk": "http://www.douyutv.com/BTK"
+                }
+            }
+        }
+    },
+    "panda": {
+        "hostname": "http://www.panda.tv",
+        "games": {
+            "heartstone": {
+                "subdir": "http://www.panda.tv/cate/hearthstone",
+                "subscription": {
+
+                }
+            },
+            "lol": {
+                "subdir": "http://www.panda.tv/cate/lol",
+                "subscription": {
+
+                }
+            }
+        }
+    },
+    "zhanqi": {
+        "hostname": "http://www.zhanqi.tv",
+        "games": {
+            "heartstone": {
+                "subdir": "http://www.zhanqi.tv/games/how",
+                "subscription": {
+
+                }
+            },
+            "warcraft": {
+                "subdir": "http://www.zhanqi.tv/games/wow",
+                "subscription": {
+
+                }
+            }
+        }
+    },
+    "longzhu": {
+        "hostname": "http://longzhu.com",
+        "games": {
+            "beauty": {
+                "subdir": "http://longzhu.com/channels/belle",
+                "subscription": {
+
+                }
+            },
+            "cf": {
+                "subdir": "http://longzhu.com/channels/cf",
+                "subscription": {
+
+                }
+            }
+        }
+    }
+}

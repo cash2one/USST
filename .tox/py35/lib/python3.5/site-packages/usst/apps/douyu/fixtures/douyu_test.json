@@ -1,0 +1,19 @@
+{
+    "douyu": {
+      "hostname": "http://www.douyutv.com",
+      "games": {
+        "heartstone": {
+          "game_url": "http://www.douyutv.com/directory/game/How",
+          "subscription": {
+          "qiuri": "http://www.douyutv.com/qiuri"
+        }
+      },
+      "warcraft": {
+        "game_url": "http://www.douyutv.com/directory/game/WOW",
+        "subscription": {
+          "btk": "http://www.douyutv.com/BTK"
+        }
+      }
+    }
+  }
+}

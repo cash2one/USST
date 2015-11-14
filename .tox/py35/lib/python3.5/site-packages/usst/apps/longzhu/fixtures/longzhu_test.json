@@ -1,0 +1,19 @@
+{
+  "longzhu": {
+    "hostname": "http://longzhu.com",
+    "games": {
+      "lol": {
+        "game_url": "http://longzhu.com/channels/lol",
+        "subscription": {
+          "haiwang": "http://star.longzhu.com/haiwang?from=challcontent"
+        }
+      },
+      "cf": {
+        "game_url": "http://longzhu.com/channels/cf",
+        "subscription": {
+          "jueji": "http://star.longzhu.com/102404?from=challcontent"
+        }
+      }
+    }
+  }
+}
