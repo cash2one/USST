@@ -1,6 +1,8 @@
 # Universal Streamer Subscribing Tool (USST)
 ======================
 
+This is a personal project. Interested users can deploy this app in your own machine. Currently, there is no front-end for this app.
+
 With new streaming platforms rising, panda.tv etc., streamers are distributed in different platforms, which cause audiences to switch between platforms in order to see what they want.
 Such switching always cost plenty of time. This tool helps solving this problems by:
 
